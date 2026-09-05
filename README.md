@@ -10,9 +10,12 @@ This repository focuses on **practical Pandas concepts relevant to AI/ML workflo
 
 ## 📚 Index
 
+### 1. 🐼 Pandas 
+Pandas is a Python library used for working with data sets. 
+[Learn Pandas ->](./01-pandas/README.md)
 ### 1. 📈 Series
 A one-dimensional labeled data structure and one of the fundamental building blocks of Pandas.
-[Learn Pandas Series →](./01-series/README.md)
+[Learn Pandas Series →](./02-series/README.md)
 
 ---
 
