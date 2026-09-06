@@ -1,65 +1,58 @@
 import pandas as pd
 
-# Creat simple pandas series from a list 
 
-age = [12,12,33,22]
+# create Simple Pandas Series From List
 
-ageSeries = pd.Series(age);
-# print(ageSeries)
+OHLCVData = [100,130,95,102,120000];
 
+OhlcvSeries = pd.Series(OHLCVData)
 
-""" output will be , 
-0    12
-1    12
-2    33
-3    22
+# print(OhlcvSeries) 
+
+""" Output will be
+0       100
+1       130
+2        95
+3       102
+4    120000
 dtype: int64
 
-If nothing else is specified, the values are labeled with their index number
+>>> If nothing else is specified, the values are labeled with their index number
+>>> This label can be used to access a specified value.
 """
 
-# This label can be used to access a specified value.
-
-# print(ageSeries[0]) # output will be 12 
+# print(OhlcvSeries[0]) # output will be  100
 
 
 # create labels (with index argument we can create labes )
 
-SeriesOfAge = pd.Series(age,index=["Hemang","Jigar","Hardik","Meet"])
+OhlcvSeriesWithLabel = pd.Series(OHLCVData,index=["OPEN","HIGH","LOW","CLOSE","VOLUME"])
 
-# print(SeriesOfAge)
+# print(OhlcvSeriesWithLabel)
 
-""" Output will be
-
-Hemang    12
-Jigar     12
-Hardik    33
-Meet      22
+""" Output Will Be 
+100
+OPEN         100
+HIGH         130
+LOW           95
+CLOSE        102
+VOLUME    120000
 dtype: int64
-
-"""
-# you can get age by lable 
-# print(SeriesOfAge['Hemang']) # output will ve 12
-
-
-# key/value pair object  as Series 
-
-"""
-we can also create key value pair object like dictionary as series.
 """
 
-stockReturns = {"day1":"2%","day2":"2.5%","day3":"5%"}
+# When you have created labels you can access an item by referring to the label.
 
-stockReturnsSeries = pd.Series(stockReturns)
+# print(OhlcvSeriesWithLabel["OPEN"])
 
-print(stockReturnsSeries)
 
-""" output will be
-day1      2%
-day2    2.5%
-day3      5%
-dtype: object
+# You can Create Series from Key Value Object Like Dictionary 
 
-The keys of the dictionary become the labels.
-"""
- 
+OhlcvDictionary = {
+    "OPEN":100,
+    "HIGH":102,
+    "LOW":97,
+    "CLOSE":99
+}
+
+OhlcvDictionarySeries = pd.Series(OhlcvDictionary)
+print(OhlcvDictionarySeries)
